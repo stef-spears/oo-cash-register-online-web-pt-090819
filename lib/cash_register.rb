@@ -14,7 +14,8 @@ class CashRegister
     @items << title
     if quantity.positive? 
       @total += price * quantity
-      @items << title * quantity
+      quantity.times do 
+        @items << title
     else 
       @total += price
     end
