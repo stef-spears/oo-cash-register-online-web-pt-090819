@@ -23,7 +23,7 @@ class CashRegister
     if @discount.positive?
       @total -= (@total * (@discount.to_f/100))
     end
-    total.to_i
+    puts "After the discount, the total comes to $#{@total.to_i}"
     #binding.pry
   end 
   
