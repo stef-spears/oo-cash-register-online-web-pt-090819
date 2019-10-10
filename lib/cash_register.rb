@@ -11,13 +11,18 @@ class CashRegister
   end
   
   def add_item(title, price, quantity = 0)
-    
+  # if quantity is given, i.e. anything other than 0
     if quantity.positive? 
+      
+  #multiply the price by the quantity and add it to the total    
       @total += price * quantity
+      
+  #add the title to the items array however many times quantity says to    
       quantity.times do 
         @items << title
       end
     else 
+  #otherwise if no quantity is given, just add the title to the items array and add the price    
       @items << title
       @total += price
     end
@@ -37,5 +42,10 @@ class CashRegister
   def items
     @items
   end
+  
+  def void_last_transaction
+    @items.last
+  end
+  
   
 end 
