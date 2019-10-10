@@ -19,7 +19,7 @@ class CashRegister
   
   def apply_discount
     if @discount.positive?
-      @total * @discount.to_float 
+      @total * @discount.to_f 
     end
   end 
   
