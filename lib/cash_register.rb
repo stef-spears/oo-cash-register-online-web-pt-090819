@@ -22,10 +22,10 @@ class CashRegister
     # add title to items "quantity" times
       quantity.times do
         @items << title 
-        @total += price
+        
       end
     #and add the price reflecting multiple quantities to the total 
-         #* quantity
+        @total += price * quantity
       
     end
   end 
