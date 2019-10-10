@@ -11,13 +11,14 @@ class CashRegister
   end
   
   def add_item(title, price, quantity = 0)
-    @items << title
+    
     if quantity.positive? 
       @total += price * quantity
       quantity.times do 
         @items << title
       end
     else 
+      @items << title
       @total += price
     end
   end 
