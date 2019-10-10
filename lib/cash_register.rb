@@ -18,9 +18,9 @@ class CashRegister
     # and add the price to the total 
       @total += price
     # if you receive a title and quantity > 1
-    elsif quantity.positive? 
+    else 
     # add title to items "quantity" times
-      quantity.times do |title|
+      quantity.times do
         @items << title 
         @total += price
       end
