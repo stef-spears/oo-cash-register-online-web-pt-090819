@@ -2,7 +2,7 @@ class CashRegister
   
   attr_accessor :total, :discount, :title, :price, :items
   
-  def initialize(discount = 0.00)
+  def initialize(discount = 0.0)
     @total = 0
     @discount = discount
     @items = []
@@ -19,7 +19,7 @@ class CashRegister
   
   def apply_discount
     if @discount.positive?
-      @total * @discount 
+      @total * @discount.to_float 
     end
   end 
   
