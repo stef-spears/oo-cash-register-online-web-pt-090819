@@ -11,9 +11,14 @@ class CashRegister
   end
   
   def add_item(title, price, quantity = 0)
+    # if you receive a title w/no quantity
+    # add the title to items
+    # if you receive a title and quantity > 1
+    # add title to items "quantity" times
     @items << title
     if quantity.positive? 
       @total += price * quantity
+      @items 
     else 
       @total += price
     end
@@ -31,7 +36,7 @@ class CashRegister
   end 
   
   def items
-    @items.uniq
+    @items
   end
   
 end 
