@@ -9,7 +9,7 @@ class CashRegister
   end
   
   def add_item(title)
-    title << items
+    @items << title
   end 
   
 end 
