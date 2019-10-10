@@ -2,7 +2,7 @@ require 'pry'
 
 class CashRegister
   
-  attr_accessor :total, :discount, :title, :price, :items
+  attr_accessor :total, :discount, :title, :price, :items, :last_transaction_price
   
   def initialize(discount = 0.0)
     @total = 0
@@ -14,7 +14,8 @@ class CashRegister
   # if quantity is given, i.e. anything other than 0
     if quantity.positive? 
       
-  #multiply the price by the quantity and add it to the total    
+  #multiply the price by the quantity and add it to the total
+      @last_transaction_price = price * quantity
       @total += price * quantity
       
   #add the title to the items array however many times quantity says to    
@@ -24,6 +25,7 @@ class CashRegister
     else 
   #otherwise if no quantity is given, just add the title to the items array and add the price    
       @items << title
+      @last_transaction_price = price
       @total += price
     end
   end 
@@ -44,7 +46,8 @@ class CashRegister
   end
   
   def void_last_transaction
-    @items.last
+    @items.pop
+    @total - @last_transaction_price
   end
   
   
