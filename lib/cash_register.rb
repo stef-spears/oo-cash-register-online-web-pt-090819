@@ -1,3 +1,5 @@
+require 'pry'
+
 class CashRegister
   
   attr_accessor :total, :discount, :title, :price, :items
@@ -19,8 +21,9 @@ class CashRegister
   
   def apply_discount
     if @discount.positive?
-      @total.to_i * @discount.to_i
+      @total * @discount
     end
+    binding.pry
   end 
   
 end 
