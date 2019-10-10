@@ -11,22 +11,12 @@ class CashRegister
   end
   
   def add_item(title, price, quantity = 0)
-    # if you receive a title w/no quantity
-    if quantity = 0 
-    # add the title to items
-      @items << title
-    # and add the price to the total 
-      @total += price
-    # if you receive a title and quantity > 1
+    @items << title
+    if quantity.positive? 
+      @total += price * quantity
+      @items 
     else 
-    # add title to items "quantity" times
-      quantity.times do
-        @items << title 
-        
-      end
-    #and add the price reflecting multiple quantities to the total 
-        @total += price * quantity
-      
+      @total += price
     end
   end 
   
