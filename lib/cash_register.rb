@@ -21,9 +21,10 @@ class CashRegister
   
   def apply_discount
     if @discount.positive?
-      @total - (@total * (@discount.to_f/100))
+      @total -= (@total * (@discount.to_f/100))
     end
-    binding.pry
+    total.to_i
+    #binding.pry
   end 
   
 end 
